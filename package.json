@@ -1,0 +1,16 @@
+{
+  "name": "1dchess",
+  "version": "0.1.0",
+  "description": "Best 1D chess ever",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jason Christian",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^4.0.1"
+  }
+}

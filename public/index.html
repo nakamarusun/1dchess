@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+
+<head>
+  <meta charset="utf-8">
+  <title>1D chess</title>
+  <meta name="description" content="Best 1D chess multiplayer game ever">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="css/main.css">
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+
+<body>
+<div class="centerfl">
+  <div id="notif">
+    Bruh man
+  </div>
+</div>
+<div id="title">
+  <h1>
+    1D chess
+  </h1>
+  <p>Welcome to 1-Dimensional chess!</p>
+  <p>Create a room or join a preexisting room.</p>
+</div>
+
+<div class="centerfl">
+  <div id="roomidbox">
+    <h1>Join a room</h1>
+    <input id="joinroom" autocomplete="off" /><button id="joinbtn">Join!</button>
+    <a id="createroom" href="javascript:void(0)"><h2>Or create <u>one</u></h2></a>
+  </div>
+  <div id="uibar">
+    <ul>
+      <li>Game ID: <span id="gameid"></span></li>
+      <li>Current Turn: <span id="currentturn"></span></li>
+    </ul>
+    <ul>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+  <div id="mainboard"></div>
+</div>
+
+<script>module={};</script>
+<script src="./js/board.js"></script>
+<script src="./js/app.js"></script>
+</body>
+</html>
