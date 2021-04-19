@@ -27,7 +27,7 @@ const serverModule = sslFileAvailable == undefined ? require('http') : require('
 
 // Create HTTP server and listen
 const port = process.env.PORT || 8080;
-const server = serverModule.createServer(serverOpt, app).listen(port, () => {console.log(`Listening to ${port}`)});
+const server = serverModule.createServer(serverOpt, app).listen(port, () => {console.log(`Listening to ${port} HTTPS: ${sslFileAvailable}`)});
 
 // Listen to WS connections
 const io = require('socket.io')().listen(server);

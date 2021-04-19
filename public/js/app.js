@@ -12,7 +12,7 @@ var IO = {
     init: function() {
         if (IO.socket !== undefined) return;
 
-        IO.socket = io("ws://" + window.location.host + "/main");
+        IO.socket = io(window.location + "/main");
         IO.bindEvents();
     },
 
