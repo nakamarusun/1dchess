@@ -3,6 +3,12 @@ const CONSTANTS = {
     W_BOARD_COL: "#f9fae8",
 };
 
+function pathJoin(parts, sep) {
+   var separator = sep || '/';
+   var replace   = new RegExp(separator+'{1,}', 'g');
+   return parts.join(separator).replace(replace, separator);
+}
+
 var IO = {
 
     // Main socket to the server
@@ -12,7 +18,7 @@ var IO = {
     init: function() {
         if (IO.socket !== undefined) return;
 
-        IO.socket = io(window.location + "/main");
+        IO.socket = io("/main", {path: pathJoin([window.location.pathname, "/socket.io/"]) });
         IO.bindEvents();
     },
 
