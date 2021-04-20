@@ -72,9 +72,15 @@ function joinRoom(id) {
     if (isInRoom(this) || id.length < 1) return;
 
     // Check regex
-    if (!idRegex.test(id) && roomData[id] == undefined && !roomData[id].isFull) {
+    if (!idRegex.test(id) || roomData[id] == undefined) {
         console.log(`Room join request with length ${id} denied`);
         sendInfo(this, "Room invalid", "error");
+        return;
+    }
+
+    if (roomData[id].isFull) {
+        console.log(`Room join request with length ${id} denied`);
+        sendInfo(this, "Room full", "error");
         return;
     }
 
